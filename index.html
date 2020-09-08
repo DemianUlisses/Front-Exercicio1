@@ -1,35 +1,22 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="pt-br">
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
-  <script src="https://js.api.here.com/v3/3.1/mapsjs-core.js" type="text/javascript" charset="utf-8"></script>
-  <script src="https://js.api.here.com/v3/3.1/mapsjs-service.js" type="text/javascript" charset="utf-8"></script>
-  <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>GeoLocalização</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/main.css">
+    <style type="text/css">
+            html, body, #map { height: 100%; margin: 0; }
+      </style>
+
+ 
+    <script src="map.js"></script>
 </head>
-
 <body>
-  <h1>Meu Mapa</h1>
-  <form action="" id="form">
-    <input type="text" id="endereco">
-    <input type="submit">
-  </form>
-  <div style="width: 640px; height: 480px" id="mapContainer">
-
-  </div>
-  <script src="rota.js"></script>
-  <script>
-    const form = document.getElementById('form')
-    form.addEventListener("submit", function (event) {
-      event.preventDefault();
-      const input = document.getElementById("endereco").value + ", Brazil"
-      geocodingParams = { searchText: input };
-      geocoder.geocode(geocodingParams, onResult);
-
-    })
-  </script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD5CeUjT8zO3Xh3BI-mRGb2sWSABVPSAnw&callback=initMap"
+    type="text/javascript"></script>
+    <div id="map"></div>  
 </body>
-
 </html>
